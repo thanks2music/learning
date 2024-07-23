@@ -15,3 +15,7 @@ I believe that performance should take precedence over all other things.
 ## Astro VS Next.js
 
 ![ALT](https://gyazo.com/c5c1f572b3cd912df1af0fca39012bcf/raw)
+
+and
+
+![ALT](https://gyazo.com/0d91b1ef5ad0233213fed4425e2f2a50/raw)
