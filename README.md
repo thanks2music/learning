@@ -4,7 +4,10 @@ The “web front end” technology is advancing too quickly. Therefore, if we do
 
 ---
 
-Also, my personal feelings include the following.
-
-A person who has never failed is a person who has never tried.
-So, fear doing nothing more than fearing failure from taking on challenges.
+- React
+- Next
+- Astro
+- Storybook
+- Tailwind CSS
+- Go
+- GraphQL
