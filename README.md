@@ -50,6 +50,7 @@ The “web front end” technology is advancing too quickly. Therefore, if we do
 - Wrangler
 - Vite
 - Remix
+- HTMX
 - Lint 
   - Prettier
   - ESLint
