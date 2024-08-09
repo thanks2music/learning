@@ -13,7 +13,7 @@ export function Headline(props) {
         </p>
       </div>
 
-      <h1 className="text-4xl font-bold text-slate-8000">{props.title}</h1>
+      <h1 className="text-4xl font-bold text-slate-8000 capitalize">{props.page}</h1>
     </div>
   );
 }

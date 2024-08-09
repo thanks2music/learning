@@ -11,7 +11,7 @@ export default function About() {
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
-      <Headline title="About" page="about" />
+      <Headline page="about" />
       <Links />
       <Footer />
     </main>
