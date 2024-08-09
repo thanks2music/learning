@@ -6,12 +6,18 @@ import { Headline } from "@/components/Headline";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// default exportを使う場合、import時は{}ではない。
+// ファイルシステムルーティング(Page ver)は、export defaultでないといけない。
+// export functionなら、{} を使ってimportする。
+
 export default function Home() {
   return (
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
-      <Headline page="index"/>
+      <Headline page="index"
+        code={<code className="font-mono font-bold">pages/index.js</code>}
+      />
 
       <Links />
       <Footer />
