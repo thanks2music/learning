@@ -12,15 +12,17 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <main
-      className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
-    >
-      <Headline page="index">
-        <code className="font-mono font-bold">pages/index.js</code>
-      </Headline>
+    <div>
+      <main
+        className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
+      >
+        <Headline page="index">
+          <code className="font-mono font-bold">pages/index.js</code>
+        </Headline>
 
-      <Links />
+        <Links />
+      </main>
       <Footer />
-    </main>
+    </div>
   );
 }
