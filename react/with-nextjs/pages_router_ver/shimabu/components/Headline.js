@@ -16,7 +16,7 @@ export function Headline(props) {
 
       <h1 className="text-4xl font-bold text-slate-8000 capitalize">{props.page}</h1>
 
-      <button onClick={props.onClick}>Click Me!</button>
+      {/* <button onClick={props.onClick}>Click Me!</button> */}
     </div>
   );
 }
