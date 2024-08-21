@@ -15,9 +15,9 @@ export default function Home() {
     <main
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
-      <Headline page="index"
-        code={<code className="font-mono font-bold">pages/index.js</code>}
-      />
+      <Headline page="index">
+        <code className="font-mono font-bold">pages/index.js</code>
+      </Headline>
 
       <Links />
       <Footer />
