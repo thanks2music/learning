@@ -1,20 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
 import styles from "@/app/styles/page.module.sass";
+import { Header } from "@/app/components/Header";
 import { Doclinks } from "@/app/components/Doclinks";
 
 export default function About() {
   return (
     <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          This is About page.&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <Link href="/">Back to <b>トップページ</b></Link>
-        </div>
-      </div>
+      <Header name="about" navLink="/" next="index" />
 
       <div className={styles.center}>
         <Image
