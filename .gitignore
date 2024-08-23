@@ -35,3 +35,7 @@ next-env.d.ts
 
 # eLearning
 codemafia*
+
+.nx/installation
+.nx/cache
+.nx/workspace-data
