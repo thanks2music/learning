@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "@/app/styles/page.module.sass";
-import { Header } from "@/app/components/Header";
-import { Doclinks } from "@/app/components/Doclinks";
+import { Header } from "@/components/Header";
+import { Doclinks } from "@/components/Doclinks";
 
 export default function About() {
   return (
