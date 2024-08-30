@@ -1,9 +1,0 @@
-{
-  "name": "origin-e2e",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "apps/origin-e2e/src",
-  "tags": [],
-  "implicitDependencies": ["origin"],
-  "// targets": "to see all targets run: nx show project origin-e2e --web",
-  "targets": {}
-}
