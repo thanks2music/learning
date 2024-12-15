@@ -1,0 +1,36 @@
+{
+  "name": "WP-Environment Default",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "wp-env start",
+    "update": "wp-env start --update",
+    "stop": "wp-env stop",
+    "restart": "wp-env stop && wp-env start --update",
+    "env": "wp-env",
+    "cli": "wp-env run cli wp",
+    "cli:test": "wp-env run tests-cli wp"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "thanks2music",
+  "license": "ISC",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "@wordpress/env": "^10.13.0",
+    "@wordpress/eslint-plugin": "^21.6.0",
+    "eslint": "^8.57.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
+    "prettier": "^3.4.2",
+    "watch": "^1.0.2",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
