@@ -39,3 +39,6 @@ codemafia*
 .nx/installation
 .nx/cache
 .nx/workspace-data
+
+# php
+*vendor

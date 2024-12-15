@@ -1,40 +1,38 @@
 {
-	"name": "PHPCS for VSCodes",
-	"description": "",
-	"type": "",
-	"homepage": "",
-	"license": "GPL-3.0-or-later",
-	"authors": [
-			{
-					"name": "thanks2music",
-					"email": "thanks2music@gmail.com"
-			}
-	],
-	"require": {
-			"phpcompatibility/phpcompatibility-wp": "^2.1",
-			"sirbrillig/phpcs-variable-analysis": "^2.11",
-      "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1"
-	},
-	"config": {
-			"allow-plugins": {
-					"dealerdirect/phpcodesniffer-composer-installer": true
-			},
-			"sort-packages": true
-	},
-	"prefer-stable": true,
-	"minimum-stability": "dev",
-	"require-dev": {
-			"phpcompatibility/php-compatibility": "dev-develop as 9.99.99",
-			"squizlabs/php_codesniffer": "^3.6",
-    	"wp-coding-standards/wpcs": "^3.1"
-	},
-	"scripts": {
-		"test": "phpunit",
-		"lint": [
-			"phpcs --standard=phpcs.ruleset.xml $(find ./ -name '*.php')"
-		],
-		"fix": [
-			"phpcbf --standard=phpcs.ruleset.xml $(find ./ -name '*.php')"
-		]
-	}
+  "name": "learning/php",
+  "description": "",
+  "type": "php-wp-cs-auto-format",
+  "homepage": "https://github.com/thanks2music/learning/tree/main/php",
+  "license": "GPL-3.0-or-later",
+  "authors": [{
+    "name": "thanks2music",
+    "email": "thanks2music@gmail.com"
+  }],
+  "require": {
+    "phpcompatibility/phpcompatibility-wp": "^2.1",
+    "sirbrillig/phpcs-variable-analysis": "^2.11",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.1"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    },
+    "sort-packages": true
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev",
+  "require-dev": {
+    "phpcompatibility/php-compatibility": "dev-develop as 9.99.99",
+    "squizlabs/php_codesniffer": "^3.6",
+    "wp-coding-standards/wpcs": "^3.1"
+  },
+  "scripts": {
+    "test": "phpunit",
+    "lint": [
+      "phpcs --standard=phpcs.ruleset.xml $(find ./ -name '*.php')"
+    ],
+    "fix": [
+      "phpcbf --standard=phpcs.ruleset.xml $(find ./ -name '*.php')"
+    ]
+  }
 }
