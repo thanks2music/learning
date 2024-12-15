@@ -1,0 +1,16 @@
+{
+	// phpcsを有効化
+	"phpcs.enable": true,
+	"phpcs.autoConfigSearch": true,
+	"phpcs.executablePath": "${workspaceRoot}/vendor/bin/phpcs",
+  "phpsab.standard": "./phpcs.ruleset.wp.xml",
+  "phpsab.executablePathCS": "./vendor/bin/phpcs",
+  "phpsab.executablePathCBF": "./vendor/bin/phpcbf",
+  "phpsab.snifferArguments": ["-d", "error_reporting='E_ALL&~E_DEPRECATED'"],
+  "phpsab.fixerArguments": ["-d", "error_reporting='E_ALL&~E_DEPRECATED'"],
+  "editor.formatOnSave": true,
+  "intelephense.stubs": ["Core", "date", "json", "mbstring", "standard", "pcre", "wordpress"],
+  "[php]": {
+    "editor.defaultFormatter": "valeryanm.vscode-phpsab"
+  }
+}

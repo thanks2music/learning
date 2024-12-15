@@ -1,0 +1,9 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:prettier/recommended",
+    "plugin:@wordpress/eslint-plugin/recommended"
+  ]
+}
