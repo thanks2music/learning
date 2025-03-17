@@ -10,31 +10,14 @@ const secrets = require('../../../google_secrets.json');
 
   await doc.useServiceAccountAuth({
     client_email: secrets.client_email,
-    private_key: secrets.private_key,
+    private_key: secrets.private_key
   });
 
   await doc.loadInfo();
 
   const personSheet = doc.sheetsByTitle['persons'];
-  const rows = await personSheet.addRows([
-    {
-      name: 'Tom',
-      age: 18,
-      gender: 'M',
-    },
-    {
-      name: 'Hanako',
-      age: 20,
-      gender: 'F',
-    },
-    {
-      name: 'John',
-      age: 25,
-      gender: 'M',
-    },
-  ]);
+  // 「getRows()」メソッドを使うことで、全ての行を取得できる
+  const rows = await personSheet.getRows();
 
-  rows.forEach(row => async () => {
-    await row.save();
-  });
+  rows[0].delete();
 })();

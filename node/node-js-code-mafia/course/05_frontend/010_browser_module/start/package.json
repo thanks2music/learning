@@ -1,10 +1,11 @@
 {
-  "name": "end",
+  "name": "start",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
+  "type": "module",
   "scripts": {
-    "build": "webpack"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +14,6 @@
     "is-odd": "^3.0.1"
   },
   "devDependencies": {
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^6.0.1"
   }
 }

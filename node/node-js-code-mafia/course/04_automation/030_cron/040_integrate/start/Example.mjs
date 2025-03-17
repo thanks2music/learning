@@ -1,30 +1,31 @@
-import nodemailer from 'nodemailer';
-import dotenv from 'dotenv';
-dotenv.config();
+import cron from 'node-cron';
+import { addEmployeesToGS } from './google-sheet.mjs';
+import { sendEmail } from './email.mjs';
 
-(async () => {
-  const message = {
-    from: process.env.EMAIL_FROM,
-    to: process.env.EMAIL_TO,
-    subject: 'メールの件名です',
-    text: `これはスクリプトによって送信されました。\n改行後`,
-  };
+// 開発中は、Cronをコメントアウトしておいて、
+// 特定の関数を必ず実行出来る状態で進める。
+// 本番環境にデプロイする際に、Cronを有効にする。
+cron.schedule('46 20 * * *', () => {
+  main();
+});
 
-  const smtpConfig = {
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true, // SSL
-    auth: {
-      user: process.env.EMAIL_FROM,
-      // googleアカウントのアプリパスワードを設定
-      // see https://support.google.com/accounts/answer/185833?hl=ja
-      pass: process.env.APP_PASS,
-    },
-  };
+// main();
 
-  const transporter = nodemailer.createTransport(smtpConfig);
-
-  transporter.sendMail(message, function (err, response) {
-    console.log(err || response);
-  });
-})();
+// 関数は、asyncが必要
+async function main() {
+  const dt = new Date();
+  const dtStr = dt.toDateString();
+  const sheetUrl = `https://docs.google.com/spreadsheets/d/${process.env.GOOGLE_SHEET_ID}`;
+  // エラーが発生した場合、try / catchでエラーをキャッチする
+  try {
+    // エラーを確認する
+    // awaitを使っているため
+    await addEmployeesToGS();
+    sendEmail('処理が成功しました', `処理成功時刻： ${dtStr}\n\n${sheetUrl}`);
+  } catch (e) {
+    sendEmail(
+      'エラーが発生しました',
+      `エラー発生時刻： ${dtStr}\n\nエラーログ：${e}`
+    );
+  }
+}
