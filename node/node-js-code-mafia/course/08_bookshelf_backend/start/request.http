@@ -7,3 +7,15 @@ http://localhost:8080/api/books/6348cb2360bfbbb3b24b6ffc
 ###
 
 DELETE http://localhost:8080/api/books/6348cb2360bfbbb3b24b6ffc
+
+###
+
+POST http://localhost:8080/api/books
+content-type: application/json
+
+{
+  "title": "ウォリアーズ",
+  "description": "説明文",
+  "comment": "コメント",
+  "rating" : 3
+}
