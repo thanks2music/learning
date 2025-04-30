@@ -2,7 +2,11 @@ import env from 'dotenv';
 env.config();
 
 import { MongoClient, ServerApiVersion, ObjectId } from 'mongodb';
-const client = new MongoClient(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+const client = new MongoClient(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverApi: ServerApiVersion.v1
+});
 
 async function getCollection() {
   try {
@@ -17,6 +21,6 @@ async function getCollection() {
 updateBook();
 async function updateBook() {
   const col = await getCollection();
-
+  await col.updateMany({ description: '三島由紀夫' }, { $set: { rating: 3 } });
   await client.close();
 }
