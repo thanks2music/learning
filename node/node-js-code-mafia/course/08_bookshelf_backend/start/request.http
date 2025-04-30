@@ -1,1 +1,9 @@
 http://localhost:8080/api/books
+
+###
+
+http://localhost:8080/api/books/6348cb2360bfbbb3b24b6ffc
+
+###
+
+DELETE http://localhost:8080/api/books/6348cb2360bfbbb3b24b6ffc
