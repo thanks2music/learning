@@ -1,5 +1,7 @@
 import express from 'express';
+import { body } from 'express-validator';
 import Book from '../models/book.mjs';
+import { registBook } from '../controllers/books.mjs';
 const router = express.Router();
 
 router.get('/', async (req, res) => {
@@ -25,12 +27,18 @@ router.delete('/:id', async (req, res) => {
   res.json({ msg: 'Delete Succeeded' });
 });
 
-// POSTメソッド
-router.post('/', async (req, res) => {
-  const book = new Book(req.body);
-  const newBook = await book.save();
-  res.json(newBook);
-});
+// POSTメソッド - まずバリデーションを処理する
+router.post(
+  '/',
+  body('title').notEmpty().withMessage('タイトルは必須です'),
+  body('description').notEmpty().withMessage('説明文は必須です'),
+  body('comment').notEmpty().withMessage('コメントは必須です'),
+  body('rating')
+    .notEmpty()
+    .isInt({ min: 1, max: 5 })
+    .withMessage('評価は1から5の整数で指定してください'),
+  registBook
+);
 
 // PATCHメソッド (更新/
 router.patch('/:id', async (req, res) => {
