@@ -7,17 +7,17 @@ const products = [
   { name: 'clock', price: 700 }
 ];
 
-router.get('/products', function (req, res) {
+router.get('/', function (req, res) {
   res.json(products);
 });
 
-router.get('/products/:id', function (req, res) {
+router.get('/:id', function (req, res) {
   const targetId = req.params.id;
   res.json(products[targetId]);
 });
 
 // productsに対して追加を行う
-router.post('/products', function (req, res) {
+router.post('/', function (req, res) {
   const newProduct = req.body;
   products.push(newProduct);
   console.log(products);
@@ -26,7 +26,7 @@ router.post('/products', function (req, res) {
 
 // productsに対して削除を行う
 // 「:id」とする事で、Expressのダイナミックルーティングにより、idの値を取得できる
-router.delete('/products/:id', function (req, res) {
+router.delete('/:id', function (req, res) {
   const deleteId = req.params.id;
   products.splice(deleteId, 1);
   console.log(products);
@@ -34,7 +34,7 @@ router.delete('/products/:id', function (req, res) {
 });
 
 // productsに対して更新を行う
-router.patch('/products/:id', function (req, res) {
+router.patch('/:id', function (req, res) {
   const targetProduct = products[req.params.id];
 
   // req.bodyオブジェクト内にnameがあれば、nameを更新する
