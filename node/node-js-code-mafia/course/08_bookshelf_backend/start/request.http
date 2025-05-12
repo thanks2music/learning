@@ -6,7 +6,19 @@ http://localhost:8080/api/books/6348cb2360bfbbb3b24b6ffc
 
 ###
 
+http://localhost:8080/api/books/6348cb2360bfbbb3b24b6fff
+
+###
+
+http://localhost:8080/a
+
+###
+
 DELETE http://localhost:8080/api/books/6348cb2360bfbbb3b24b6ffc
+
+### 末尾のidを一つ変更して、例外を試す
+
+DELETE http://localhost:8080/api/books/6348cb2360bfbbb3b24b6ffe
 
 ###
 
@@ -26,5 +38,5 @@ PATCH http://localhost:8080/api/books/63566ef3c58f15f29410dc90
 content-type: application/json
 
 {
-  "rating" : 1
+  "rating" : 2
 }
