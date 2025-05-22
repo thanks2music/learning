@@ -14,11 +14,18 @@ http://localhost:8080/a
 
 ###
 
-DELETE http://localhost:8080/api/books/6348cb2360bfbbb3b24b6ffc
+DELETE http://localhost:8080/api/books/6333ed5ec73723402b0796c0
+
+### 例外処理を試す
+DELETE http://localhost:8080/api/books/a
 
 ### 末尾のidを一つ変更して、例外を試す
 
 DELETE http://localhost:8080/api/books/6348cb2360bfbbb3b24b6ffe
+
+###
+
+POST http://localhost:8080/api/books/6
 
 ###
 

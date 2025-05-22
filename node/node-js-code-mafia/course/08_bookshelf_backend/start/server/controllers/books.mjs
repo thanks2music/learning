@@ -1,4 +1,5 @@
 import { validationResult } from 'express-validator';
+import mongoose from 'mongoose';
 import Book from '../models/book.mjs';
 
 async function getAllBooks(req, res) {
@@ -21,12 +22,18 @@ async function getBookById(req, res) {
 }
 
 async function deleteBook(req, res) {
-  const _id = req.params.id;
   // Mongooseの場合、ObjectIdを使わずに、直接IDを指定して取得することができる
+  const { id } = req.params;
+
+  // ObjectIdの妥当性をチェック
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res.status(400).json({ error: '無効なIDが指定されました' });
+  }
+
   // リファクタのために、一度変数に入れて、console.logで内容を確認する
   // const result = await Book.deleteOne({ _id: _id });
   // 確認したところ「deletedCount」という値が返す事が分かったので、分割代入で、「deletedCount」だけを取得する
-  const { deletedCount } = await Book.deleteOne({ _id: _id });
+  const { deletedCount } = await Book.deleteOne({ id });
   if (deletedCount === 0)
     return res.status(404).json({ msg: 'Target Book Not Found' });
   res.json({ msg: 'Delete Succeeded' });
