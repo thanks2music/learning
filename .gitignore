@@ -44,3 +44,7 @@ codemafia*
 
 # php
 *vendor
+
+# MarkDown
+ais/*.md
+ais/**/*.md
