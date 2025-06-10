@@ -1,50 +1,96 @@
-# dependencies
+# ========================
+# 基本不要ファイル/ディレクトリ
+# ========================
+.DS_Store
+Thumbs.db
+
+# ========================
+# Node依存
+# ========================
 /node_modules
 /.pnp
 .pnp.js
 
-# testing
+# ========================
+# ロックファイル(使わないものだけ指定)
+# ========================
+*.lock
+
+# ========================
+# テスト/カバレッジ
+# ========================
 /coverage
 
-# next.js
+# ========================
+# Next.js
+# ========================
 /.next/
 *.next
-/out/
 
-# production
+
+# ========================
+# ビルド/デプロイ生成物
+# ========================
 /build
+/dist
+/build
+/out
 
-# misc
-.DS_Store
 *.pem
 
-# debug
+# ========================
+# ログ/キャッシュ
+# ========================
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
-/.env/
+# ========================
+# ローカル開発環境
+# ========================
+.env
 *.env
 .env*.local
+.wp-env.json
+.envrc
+/.env/
 
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-# eLearning
-codemafia*
-
+# ========================
+# IDE/エディタ
+# ========================
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+.idea/
 .nx/installation
 .nx/cache
 .nx/workspace-data
 
-# php
+# ========================
+# Vercel
+# ========================
+.vercel
+
+# ========================
+# TypeScript
+# ========================
+*.tsbuildinfo
+next-env.d.ts
+
+# ========================
+# eLearning/特定プロジェクト
+# ========================
+codemafia*
+
+# ========================
+# PHP
+# ========================
+/vendor
+/vendor/
 *vendor
 
-# MarkDown
-ais/*.md
-ais/**/*.md
+# ========================
+# MarkDown（AI用: README以外除外の意図明文化）
+# ========================
+!ai/**/README.md
+ai/**/*.md
