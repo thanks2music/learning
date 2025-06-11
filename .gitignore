@@ -92,5 +92,5 @@ codemafia*
 # ========================
 # MarkDown（AI用: README以外除外の意図明文化）
 # ========================
-!ai/**/README.md
 ai/**/*.md
+!ai/**/README.md
